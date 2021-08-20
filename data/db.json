@@ -1,22 +1,28 @@
 {
-    "blogs":[
-        {
-            "title": "blog1" ,
-            "description": "blog1 description",
-            "id":1
-        },
-    
-        {
-            "title": "blog2" , 
-            "description": "blog2 description", 
-            "id":2
-        },
-    
-        {
-            "title": "blog3" , 
-            "description": "blog3 description", 
-            "id":3
-        }
-    ]
-    
+  "blogs": [
+    {
+      "title": "blog1",
+      "description": "blog1 description",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "blog2",
+      "description": "blog2 description",
+      "author": "mario",
+      "id": 2
+    },
+    {
+      "title": "blog3",
+      "description": "blog3 description",
+      "author": "mario",
+      "id": 3
+    },
+    {
+      "title": "new polfjnjvk",
+      "description": "dfkjvdv df",
+      "author": "peter",
+      "id": 4
+    }
+  ]
 }

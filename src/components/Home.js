@@ -1,4 +1,3 @@
-import { useState } from "react";
 import BlogList from "./partials/BlogList";
 import useFetch from "../hooks/useFetch";
 
@@ -13,7 +12,7 @@ const Home = () =>{
                 <h2>The Blogs</h2>
                 { error && <span>{error}</span> }
                 { isPending && <div> Loading...</div> }
-                
+
                 {
                     blogs &&
                     <div className="blogs-content">
