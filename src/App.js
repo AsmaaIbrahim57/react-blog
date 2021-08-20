@@ -6,7 +6,6 @@ import CreateBlog from './components/CreateBlog';
 import BlogDetails from './components/BlogDetails';
 
 function App() {
-  const intro = "Welcome to my first detailed React App!";
   return (
     <Router>
       
