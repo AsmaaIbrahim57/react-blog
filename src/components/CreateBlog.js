@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import addAction from "../actions/BlogActions";
+import { connect, useDispatch } from "react-redux";
+
 const CreateBlog = () =>{
 
     const [title, setTitle] = useState('');
@@ -9,6 +12,7 @@ const CreateBlog = () =>{
     const [isPending, setIsPending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -20,6 +24,7 @@ const CreateBlog = () =>{
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(blog)
         }).then(()=>{
+            dispatch(addAction(blog));
             setTitle('');
             setAuthor('');
             setDescription('');
@@ -74,4 +79,4 @@ const CreateBlog = () =>{
     )
 }
 
-export default CreateBlog;
+export default connect(addAction)(CreateBlog);

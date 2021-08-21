@@ -1,13 +1,18 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { deleteAction } from "../../actions/BlogActions";
+import { Button } from "@material-ui/core";
 
 const BlogList = ({blogs})=>{
-    
+    const dispatch = useDispatch();
+
     const handleDelete = (id) =>{
 
         fetch("http://localhost:8000/blogs/"+id,{
             method: "DELETE",
         }).then(()=>{
-            window.location.reload()
+            dispatch(deleteAction(id));
+            // window.location.reload()
         })
 
     };
@@ -21,7 +26,9 @@ const BlogList = ({blogs})=>{
                         </Link>
                         <h4>{blog.author}</h4>
                         <p>{blog.description}</p>
-                        <button onClick={() => handleDelete(blog.id)}>Delete</button>
+                        <Button variant="contained" color="secondary" onClick={() => handleDelete(blog.id)}>
+                            Delete
+                        </Button>
                     </div>
                            
             ))}

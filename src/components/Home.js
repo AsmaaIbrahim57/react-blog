@@ -1,10 +1,13 @@
 import BlogList from "./partials/BlogList";
 import useFetch from "../hooks/useFetch";
 
+import { connect, useSelector } from "react-redux";
 const Home = () =>{
 
-    const { data:blogs, isPending, error} = useFetch("http://localhost:8000/blogs");
-    
+    const { data, isPending, error} = useFetch("http://localhost:8000/blogs");
+    const selectBlogs = state => state.blogs
+
+    const blogs= useSelector(selectBlogs);
     return (
         <section >
             
@@ -32,4 +35,8 @@ const Home = () =>{
     );
 }
 
-export default Home;
+const mapToProps = state =>({
+    blogs: state.blogs
+})
+
+export default connect(mapToProps)(Home);
